@@ -14,9 +14,7 @@ const Profile = () => {
           Full-Stack Developer
         </div>
         <div className="text-wrap w-96 text-[18px] z-10 text-justify">
-          I build pixel-perfect user interfaces for web2 and web3. Security,
-          usability, optimization and maintainability are some of my top
-          priorities.
+          I am an experienced automotive professional and an avid learner from Germany, who loves building softwares with latest technologies.
         </div>
         <div className="flex mt-3 text-[32px] gap-3 bottom-0">
           <div className="cursor-pointer">

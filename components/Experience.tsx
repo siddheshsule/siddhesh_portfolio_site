@@ -1,6 +1,5 @@
 import { experiences } from "@/data/experiences";
 import React from "react";
-import TechnologyLabel from "./ui/technology-label";
 
 const Experience = () => {
   return (
@@ -20,12 +19,6 @@ const Experience = () => {
                 | <span className="ml-2">{item.employerLocation}</span>
               </p>
               <p className="mt-3 text-justify text-lg">{item.jobDescription}</p>
-
-              <p className="inline-block mt-6 space-x-2 ">
-                {item.technologiesUsed.map((tech) => (
-                  <TechnologyLabel name={tech} />
-                ))}
-              </p>
             </div>
             <div></div>
           </div>
