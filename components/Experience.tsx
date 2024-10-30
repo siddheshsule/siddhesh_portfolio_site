@@ -5,9 +5,12 @@ import TechnologyLabel from "./ui/technology-label";
 const Experience = () => {
   return (
     <div>
-      <div className="text-white ">
-        {experiences.map((item, index) => (
-          <div className="flex space-x-10 mb-6 hover:bg-teal-600 p-3 rounded-xl hover:bg-" key={index}>
+      <div>
+        {experiences.map((item) => (
+          <div
+            className="flex space-x-10 mb-6 p-3 hover:bg-slate-300 hover:bg-opacity-25 hover:text-white "
+            key={item.id}
+          >
             <div className="">
               <p>{item.period}</p>
             </div>
@@ -18,7 +21,7 @@ const Experience = () => {
               </p>
               <p className="mt-3 text-justify text-lg">{item.jobDescription}</p>
 
-              <p className="inline-block mt-6 space-x-2">
+              <p className="inline-block mt-6 space-x-2 ">
                 {item.technologiesUsed.map((tech) => (
                   <TechnologyLabel name={tech} />
                 ))}

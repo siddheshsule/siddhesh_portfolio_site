@@ -1,5 +1,6 @@
 export const experiences = [
   {
+    id: 1,
     period: "2021-Present",
     employer: "Marquardt GmbH",
     employerLocation: "Rietheim, Germany",
@@ -9,6 +10,7 @@ export const experiences = [
     technologiesUsed: ['Python','React','C++', 'System Engineering'],
   },
   {
+    id:2,
     period: "2021-Present",
     employer: "Marquardt GmbH",
     employerLocation: "Rietheim, Germany",

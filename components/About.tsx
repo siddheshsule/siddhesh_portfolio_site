@@ -3,7 +3,7 @@ import React from "react";
 const About = () => {
   return (
     <div>
-      <div className="text-lg text-white">
+      <div className="text-lg">
         During the pandemic, I embarked on a transformative journey into
         computer science, beginning with foundational skills in Python and Java
         and quickly advancing to C++. Driven by curiosity and a dedication to
