@@ -23,7 +23,7 @@ const Profile = () => {
               rel="noopener noreferrer"
               target="_blank"
             >
-              <FaGithub />
+              <FaGithub className="hover:scale-110 transition-all"/>
             </Link>
           </div>
           <div className="cursor-pointer">
@@ -32,7 +32,7 @@ const Profile = () => {
               rel="noopener noreferrer"
               target="_blank"
             >
-              <FaLinkedin />
+              <FaLinkedin className="hover:scale-110 transition-all" />
             </Link>
           </div>
         </div>

@@ -3,12 +3,14 @@ import Experience from "@/components/Experience";
 import Profile from "@/components/Profile";
 import TechSkills from "@/components/TechSkills";
 import { BackgroundBeams } from "@/components/ui/background-beams";
+import { TracingBeam } from "@/components/ui/tracing-beam";
 
 export default function Home() {
   return (
     <>
-      <div className="mx-auto min-h-screen max-w-screen-2xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0 z-20">
-        <div className="lg:flex lg:justify-between lg:gap-12">
+      <div className="relative mx-auto min-h-screen max-w-screen-2xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0 z-20">
+        <BackgroundBeams />
+        <div className="lg:flex lg:justify-between lg:gap-12 relative z-30">
           <div className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[48%] lg:flex-col lg:justify-between lg:py-24">
             <Profile />
             <TechSkills />
@@ -24,7 +26,6 @@ export default function Home() {
             </div>
           </main>
         </div>
-        <BackgroundBeams />
       </div>
     </>
   );
