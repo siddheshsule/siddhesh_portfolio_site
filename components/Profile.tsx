@@ -14,16 +14,16 @@ const Profile = () => {
           Full-Stack Developer
         </div>
         <div className="text-wrap w-96 text-[18px] z-10 text-justify">
-          I am an experienced automotive professional and an avid learner from Germany, who loves building softwares with latest technologies.
+        I&apos;m an automotive expert, a relentless learner, and a tech enthusiast from Germany with a passion for building innovative software using cutting-edge technologies.
         </div>
-        <div className="flex mt-3 text-[32px] gap-3 bottom-0">
+        <div className="flex mt-3 text-[32px] gap-5 bottom-0">
           <div className="cursor-pointer">
             <Link
               href="https://github.com/siddheshsule"
               rel="noopener noreferrer"
               target="_blank"
             >
-              <FaGithub className="hover:scale-110 transition-all"/>
+              <FaGithub className="hover:scale-125 transition-all hover:text-white"/>
             </Link>
           </div>
           <div className="cursor-pointer">
@@ -32,7 +32,7 @@ const Profile = () => {
               rel="noopener noreferrer"
               target="_blank"
             >
-              <FaLinkedin className="hover:scale-110 transition-all" />
+              <FaLinkedin className="hover:scale-125 transition-all hover:text-white" />
             </Link>
           </div>
         </div>

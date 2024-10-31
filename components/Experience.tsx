@@ -7,7 +7,7 @@ const Experience = () => {
       <div>
         {experiences.map((item) => (
           <div
-            className="flex space-x-10 mb-6 p-3 hover:bg-slate-300 hover:bg-opacity-25 hover:text-white transition-all "
+            className="flex space-x-10 mb-6 p-3 hover:bg-slate-100 hover:bg-opacity-15 hover:text-white transition-all "
             key={item.id}
           >
             <div className="">

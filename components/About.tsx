@@ -36,12 +36,10 @@ const About = () => {
             implementations. Now, I&apos;m channeling this blend of technical
             and project management expertise into the fintech and SaaS domains,
             exploring innovative applications that address key market pain
-            points. My recent projects include a Deezer-integrated music app, an
-            AI-powered bug tracking tool, and an upcoming portfolio website
-            built with Next.js, TypeScript, and Tailwind CSS. My goal is to
-            build a SaaS startup with products that are not only efficient but
-            transformative, adding true value by solving complex, real-world
-            problems for users.
+            points. NEXT-PM with TypeScript & Tailwind is my go-to tech-stack
+            for building SaaS. My goal is to build a SaaS startup with products
+            that are not only efficient but transformative, adding true value by
+            solving complex, real-world problems for users.
           </>
         ) : (
           <>
@@ -51,9 +49,14 @@ const About = () => {
             BMW AG, AUDI and Volkswagen AG. I have vastly worked...
           </>
         )}
-        <Button variant="outline" className="text-blue-500 ml-2 underline bg-slate-600 hover:bg-slate-800 border-collapse w-6 scale-75" size="icon" onClick={toggleText}>
+        <Button
+          variant="outline"
+          className="text-blue-500 ml-2 underline bg-slate-600 hover:bg-slate-800 border-collapse w-6 scale-75"
+          size="icon"
+          onClick={toggleText}
+        >
           {showFullText ? (
-            <FaChevronUp  className="h-4 w-4" />
+            <FaChevronUp className="h-4 w-4" />
           ) : (
             <FaChevronDown className="h-4 w-4" />
           )}
