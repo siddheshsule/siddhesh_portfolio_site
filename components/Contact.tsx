@@ -1,102 +1,103 @@
 "use client";
-import React, { useRef, FormEvent } from "react";
-import emailjs from "emailjs-com";
-import Head from "next/head";
+import React, { useState } from "react";
 
-const Contact: React.FC = () => {
-  const form = useRef<HTMLFormElement>(null);
+const ContactForm: React.FC = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [responseMessage, setResponseMessage] = useState("");
 
-  const sendEmail = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    if (
-      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID &&
-      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID &&
-      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY &&
-      form.current
-    ) {
-      emailjs
-        .sendForm(
-          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-        )
-        .then(
-          (result) => {
-            alert("Email successfully sent!");
-            form.current?.reset(); // Clear the form after successful submission
-          },
-          (error) => {
-            alert("Failed to send email. Please try again later.");
-          }
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setResponseMessage(
+          "Your message was sent successfully! I will reply you within 4 business days."
         );
-    } else {
-      alert("EmailJS environment variables are not set correctly.");
+      } else {
+        setResponseMessage("Failed to send message.");
+      }
+    } catch (error) {
+      setResponseMessage("An error occurred. Please try again.");
     }
   };
 
   return (
-    <>
-      <Head>
-        <title>Contact Us</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="description" content="Contact us to get in touch with us" />
-      </Head>
-      <main className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-        <h1 className="text-3xl font-semibold mb-8">Contact Us</h1>
-        <form
-          ref={form}
-          onSubmit={sendEmail}
-          className="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg space-y-4"
-        >
+    <div className="max-w-3xl mx-auto bg-slate-400 shadow-lg rounded-lg p-8 mt-12 border-animated">
+      <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
+        Get in Touch
+      </h2>
+
+      {responseMessage ? (
+        <p className="text-center text-gray-600 text-lg mt-6">{responseMessage}</p>
+      ) : (
+        <form className="space-y-6" onSubmit={handleSubmit}>
+          <p className="text-center text-lg text-gray-600 mb-10">
+            Let me know how I can help you with your SaaS development needs!
+          </p>
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-              Name
-            </label>
             <input
               type="text"
               id="name"
               name="name"
+              value={formData.name}
+              onChange={handleChange}
+              className="w-full mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200 text-black"
+              placeholder="Enter your name"
               required
-              placeholder="Your Name"
-              className="w-full mt-1 p-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
             />
           </div>
+
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-              Email
-            </label>
             <input
               type="email"
               id="email"
               name="email"
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200 text-black"
+              placeholder="Enter your email"
               required
-              placeholder="Your Email"
-              className="w-full mt-1 p-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
             />
           </div>
+
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-              Message
-            </label>
             <textarea
               id="message"
               name="message"
+              value={formData.message}
+              onChange={handleChange}
+              className="w-full mt-2 p-3 h-40 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200 text-black"
+              placeholder="Tell me about your project needs..."
               required
-              rows={5}
-              placeholder="Your Message"
-              className="w-full mt-1 p-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
-            />
+            ></textarea>
           </div>
+
           <button
             type="submit"
-            className="w-full py-3 px-6 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-200"
+            className="w-full py-3 bg-blue-950 text-white font-semibold rounded-md shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600"
           >
             Send Message
           </button>
         </form>
-      </main>
-    </>
+      )}
+    </div>
   );
 };
 
-export default Contact;
+export default ContactForm;

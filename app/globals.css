@@ -102,3 +102,9 @@
 .hide-scrollbar {
   -ms-overflow-style: none; /* Internet Explorer 10+ */
 }
+
+.border-animated {
+  animation: color-border-animation 4s infinite;
+  border-width: 4px;
+  border-style: solid;
+}
