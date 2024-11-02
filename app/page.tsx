@@ -47,6 +47,8 @@ export default function Home() {
             </div>
           </main>
         </div>
+      </div>
+      <div className="fixed bottom-0 left-0 w-full ml-10 z-30">
         <Footer />
       </div>
     </>
