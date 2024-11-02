@@ -11,10 +11,12 @@ const Profile = () => {
         <Image src={profile_pic} alt="Siddhesh Profile pic" className="w-60 rounded-full" />
         <div className="font-bold text-white text-[38px]">Siddhesh Sule</div>
         <div className="text-wrap w-96 text-[24px] mt-3 mb-3 text-white">
-          Full-Stack Developer
+          Automotive Professional &
+          <br />
+          Full-Stack Development Enthusiast
         </div>
         <div className="text-wrap w-96 text-[18px] z-10 text-justify">
-        I&apos;m an automotive expert, a relentless learner, and a tech enthusiast from Germany with a passion for building innovative software using cutting-edge technologies.
+        I&apos;m an automotive expert, a relentless learner, and a tech enthusiast from Germany with a passion for building innovative softwares using cutting-edge technologies.
         </div>
         <div className="flex mt-3 text-[32px] gap-5 bottom-0">
           <div className="cursor-pointer">
