@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import Project1 from "@/public/sample1.png";
 import { projects } from "@/data/project-data";
+import Link from "next/link";
 
 const Projects = () => {
   return (
@@ -15,15 +15,21 @@ const Projects = () => {
         <ul>
           {projects.map((item, index) => (
             <li key={index}>
-              <div className="">
+              <div className="flex flex-col">
                 <div className="flex space-x-6 space-y-3 mb-5">
                   <div className="hover:scale-110 transition-all">
-                    <Image
-                      src={item.projectImageUrl}
-                      width={200}
-                      height={48}
-                      alt={""}
-                    />
+                    <Link
+                      href="https://zentry-clone-wheat.vercel.app/"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <Image
+                        src="/img/zentry-clone-image.png"
+                        width={200}
+                        height={48}
+                        alt={""}
+                      />
+                    </Link>
                   </div>
                   <div className="flex flex-col">
                     <h3 className="text-lg font-bold">{item.title}</h3>

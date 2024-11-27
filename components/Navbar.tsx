@@ -40,8 +40,8 @@ const Navbar = () => {
     })
 
   return (
-    <div>
-      <ul className="flex gap-6 uppercase tracking-normal">
+    <div className="py-15 items-center ">
+      <ul className="flex gap-6 uppercase tracking-normal mb-5">
         <Li href="#about" isActive={activeSection === 'about'}>About</Li>
         <Li href="#experience" isActive={activeSection === 'experience'}>Experience</Li>
         <Li href="#projects" isActive={activeSection === 'projects'}>Projects</Li>
