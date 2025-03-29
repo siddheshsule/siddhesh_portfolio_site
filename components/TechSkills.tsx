@@ -1,30 +1,36 @@
+"use client";
+
 import { techSkillIcons } from "@/data/tech-skill-icons";
 import Image from "next/image";
 import React from "react";
 
 const TechSkills = () => {
   return (
-    <div>
-      <div className="relative">
-        <div className="relative">
-          <h2 className="text-wrap w-96 text-[24px] mt-3 mb-3 text-white">
-            My Tech Skills
-          </h2>
-        </div>
-        <div className="flex flex-wrap">
-          {techSkillIcons.map((icon, index) => (
-            <div key={index} className="hover:scale-150 m-2 hover:rotate-6 transition-all">
-              <Image
-                src={icon.iconUrl}
-                alt={"python logo"}
-                width={50}
-                height={50}
-              />
-            </div>
-          ))}
-        </div>
+    <section className="mt-12">
+      <div className="relative mb-6">
+        <h2 className="text-xl font-semibold uppercase tracking-wide text-slate-200">
+          Technical Skills
+        </h2>
       </div>
-    </div>
+
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6">
+        {techSkillIcons.map((icon, index) => (
+          <div
+            key={index}
+            className="flex flex-col items-center justify-center p-4 bg-slate-700 bg-opacity-30 rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
+          >
+            <Image
+              src={icon.iconUrl}
+              alt={icon.iconName}
+              width={50}
+              height={50}
+              className="mb-2 hover:scale-110 transition-transform duration-300"
+            />
+            <span className="text-sm text-slate-300">{icon.iconName}</span>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 

@@ -11,45 +11,46 @@ import Border from "@/components/ui/border";
 
 export default function Home() {
   return (
-    <>
-      <div className="relative mx-auto min-h-screen max-w-screen-2xl px-6 py-2 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0 z-20">
-        <BackgroundBeams />
-        <div className="lg:flex lg:justify-between lg:gap-12 relative z-30">
-          <div className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[48%] lg:flex-col lg:justify-between lg:py-2">
-            <div className="xs:m-10 mt-5">
-              <Navbar />
-            </div>
-            <div>
-              <Profile />
-            </div>
-            <div>
-              <TechSkills />
-            </div>
-            <div className="lg:hidden fixed bottom-0 left-0 w-full ml-10 z-30">
-              <Footer />
-            </div>
+    <div className="relative mx-auto min-h-screen max-w-screen-2xl px-6 py-4 md:px-12 md:py-10 lg:px-24 lg:py-10 font-sans">
+      {/* Background Beams */}
+      <BackgroundBeams />
+
+      {/* Page Content */}
+      <div className="lg:flex lg:justify-between lg:gap-12 relative z-30">
+        {/* Left Sidebar */}
+        <aside className="lg:sticky lg:top-10 lg:flex lg:max-h-screen lg:w-[45%] lg:flex-col lg:justify-between">
+          <div className="space-y-8">
+            <Navbar />
+            <Profile />
+            <TechSkills />
           </div>
-          <main className="lg:w-[48%] mt-10">
-            <div className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24 text-justify w-auto">
-              <div id="about">
-                <About />
-              </div>
-              <Border />
-              <div id="experience">
-                <Experience />
-              </div>
-              <Border />
-              <div id="projects">
-                <Projects />
-              </div>
-              <Border />
-              <div id="contact">
-                <Contact />
-              </div>
-            </div>
-          </main>
-        </div>
+          <div className="hidden lg:block mt-8">
+            <Footer />
+          </div>
+        </aside>
+
+        {/* Main Content */}
+        <main className="lg:w-[50%] mt-10 space-y-12">
+          <section id="about">
+            <About />
+          </section>
+          <Border />
+          <section id="experience">
+            <Experience />
+          </section>
+          <Border />
+          <section id="projects">
+            <Projects />
+          </section>
+          <Border />
+          <section id="contact">
+            <Contact />
+          </section>
+          <div className="lg:hidden mt-8">
+            <Footer />
+          </div>
+        </main>
       </div>
-    </>
+    </div>
   );
 }

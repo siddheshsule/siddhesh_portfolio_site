@@ -1,26 +1,6 @@
 export const techSkillIcons = [
   {
-    iconName: "NextJs",
-    iconUrl:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
-  },
-  {
-    iconName: "React",
-    iconUrl:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
-  },
-  {
-    iconName: "Typescript",
-    iconUrl:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
-  },
-  {
-    iconName: "Javascript",
-    iconUrl:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
-  },
-  {
-    iconName: "Cpp",
+    iconName: "C++",
     iconUrl:
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg",
   },
@@ -30,13 +10,48 @@ export const techSkillIcons = [
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
   },
   {
-    iconName: "Anaconda",
+    iconName: "MATLAB",
     iconUrl:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/anaconda/anaconda-original.svg",
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matlab/matlab-original.svg",
   },
   {
-    iconName: "NodeJs",
+    iconName: "Next.js",
+    iconUrl:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
+  },
+  {
+    iconName: "React",
+    iconUrl:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+  },
+  {
+    iconName: "TypeScript",
+    iconUrl:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+  },
+  {
+    iconName: "Node.js",
     iconUrl:
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-plain-wordmark.svg",
+  },
+  {
+    iconName: "ASPICE",
+    iconUrl: "https://img.icons8.com/external-flat-juicy-fish/64/project.png", // neutral project icon
+  },
+  {
+    iconName: "ISO 26262",
+    iconUrl: "https://img.icons8.com/external-flat-juicy-fish/64/clipboard.png", // compliance icon
+  },
+  {
+    iconName: "Project Management",
+    iconUrl: "https://img.icons8.com/color/96/project.png",
+  },
+  {
+    iconName: "JIRA",
+    iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg",
+  },
+  {
+    iconName: "DOORS",
+    iconUrl: "https://img.icons8.com/external-flaticons-flat-flat-icons/64/blueprint.png", // requirement tool icon
   },
 ];
